@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace ChargeBee.Api
 {
@@ -52,12 +53,12 @@ namespace ChargeBee.Api
 			return (U)this;
 		}
 
-		public ListResult Request(ApiConfig env)
+		public Task<ListResult> Request(ApiConfig env)
 		{
 			return ApiUtil.GetList(m_url, m_params, headers, ApiConfig.Instance);
 		}
 
-		public ListResult Request()
+		public Task<ListResult> Request()
 		{
 			return Request(ApiConfig.Instance);
 		}
