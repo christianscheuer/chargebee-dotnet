@@ -33,6 +33,8 @@ namespace ChargeBee.Internal
             m_jobj = jobj;
         }
 
+        public JToken RawJToken => m_jobj;
+
         public Subscription Subscription
         {
             get {  return GetResource<Subscription>("subscription"); }
